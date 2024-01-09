@@ -22,9 +22,9 @@ namespace MobX.CursorManagement
         [SerializeField] [Required] private CursorSet startCursorSet;
 
         [Foldout("Mediator")]
-        [SerializeField] [Required] private CursorHideAsset cursorHide;
-        [SerializeField] [Required] private CursorConfineAsset cursorConfine;
-        [SerializeField] [Required] private CursorLockAsset cursorLock;
+        [SerializeField] [Required] private HideCursorProvider cursorHide;
+        [SerializeField] [Required] private ConfineCursorProvider cursorConfine;
+        [SerializeField] [Required] private LockCursorProvider cursorLock;
         [SerializeField] [Required] private CursorStack cursorStack;
 
         #endregion

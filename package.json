@@ -13,6 +13,11 @@
   },
   "samples": [
     {
+      "displayName": "Types",
+      "description": "Contains Cursore type definitions.",
+      "path": "Samples~/Types"
+    },
+    {
       "displayName": "Numix Dark",
       "description": "Contains a dark themed example cursor set 'Numix Dark'.",
       "path": "Samples~/NumixDark"
