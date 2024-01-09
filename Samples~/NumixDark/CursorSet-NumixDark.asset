@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cab2f8d9f1a423ab2bae9d35ec41186, type: 3}
+  m_Name: CursorSet-NumixDark
+  m_EditorClassIdentifier: 
+  cursorInfos:
+  - {fileID: 11400000, guid: 967ce407409e7264888707210cd0896e, type: 2}
+  - {fileID: 11400000, guid: 2699b256a34f5dd43bc5d3f7603c5a25, type: 2}
+  - {fileID: 11400000, guid: d1976bed0c3e8e44e9f6b70650faa6ed, type: 2}
+  - {fileID: 11400000, guid: 69ecb5b61eaf06d4fa646ddb0cee50e6, type: 2}
+  - {fileID: 11400000, guid: 9552314d57ce52a4484ad463b2c60a9a, type: 2}
+  - {fileID: 11400000, guid: d7c49d0140054614295e9422982dde21, type: 2}
+  - {fileID: 11400000, guid: 482c24f57790e594791a1e62d36e2d05, type: 2}
+  - {fileID: 11400000, guid: d765c3ccc59f3f94c85b3f52722bdab0, type: 2}
+  - {fileID: 11400000, guid: 217df0a6b9486d44cad914de7727999b, type: 2}
+  - {fileID: 11400000, guid: 487528c8ee34ccd4892b721105e120e6, type: 2}
+  - {fileID: 11400000, guid: f0fb4a6287e6803449befe13d2897027, type: 2}
+  - {fileID: 11400000, guid: 2b151158ea9c0784da7f82729b9229bb, type: 2}
+  - {fileID: 11400000, guid: 15f65b3d6e150c54187f4a16e661ad84, type: 2}

@@ -1,0 +1,37 @@
+{
+  "name": "com.mobx.cursor-management",
+  "version": "1.0.0",
+  "displayName": "Cursor Management",
+  "description": "Scriptable object based cursor system capable of playing cursor animations.",
+  "unity": "2021.3",
+  "documentationUrl": "https://github.com/MobX/com.mobx.cursor-management",
+  "changelogUrl": "https://github.com/MobX/com.mobx.cursor-management/blob/main/CHANGELOG.md",
+  "licensesUrl": "https://github.com/MobX/com.mobx.cursor-management/blob/main/LICENSE.md",
+  "dependencies": {
+    "com.mobx.utilities": "1.0.0",
+    "com.mobx.mediator": "1.0.0"
+  },
+  "samples": [
+    {
+      "displayName": "Numix Dark",
+      "description": "Contains a dark themed example cursor set 'Numix Dark'.",
+      "path": "Samples~/NumixDark"
+    },
+    {
+      "displayName": "Numix Light",
+      "description": "Contains a light themed example cursor set 'Numix Light'.",
+      "path": "Samples~/NumixLight"
+    }
+  ],
+  "keywords": [
+    "cursor",
+    "management",
+    "animation"
+  ],
+  "author": {
+    "name": "MobX",
+    "email": "johnbaracudagames@gmail.com",
+    "url": "https://johnbaracuda.com/"
+  },
+  "type": "tool"
+}
