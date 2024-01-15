@@ -2,7 +2,7 @@
 
 namespace MobX.CursorManagement
 {
-    [GenerateMediator(MediatorTypes.ProviderAsset)]
+    [GenerateMediator(MediatorTypes.LockAsset)]
     public interface IConfineCursor
     {
     }

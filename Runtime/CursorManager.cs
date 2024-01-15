@@ -22,9 +22,9 @@ namespace MobX.CursorManagement
         [SerializeField] [Required] private CursorSet startCursorSet;
 
         [Foldout("Mediator")]
-        [SerializeField] [Required] private HideCursorProvider cursorHide;
-        [SerializeField] [Required] private ConfineCursorProvider cursorConfine;
-        [SerializeField] [Required] private LockCursorProvider cursorLock;
+        [SerializeField] [Required] private HideCursorLocks cursorHide;
+        [SerializeField] [Required] private ConfineCursorLocks cursorConfine;
+        [SerializeField] [Required] private LockCursorLocks cursorLock;
         [SerializeField] [Required] private CursorStack cursorStack;
 
         #endregion
@@ -126,15 +126,15 @@ namespace MobX.CursorManagement
 
         private void UpdateCursorState()
         {
-            Visible = cursorHide.IsProvided() is false;
+            Visible = cursorHide.HasAny() is false;
 
-            if (cursorLock.IsProvided())
+            if (cursorLock.HasAny())
             {
                 LockState = CursorLockMode.Locked;
                 return;
             }
 
-            if (cursorConfine.IsProvided())
+            if (cursorConfine.HasAny())
             {
                 LockState = CursorLockMode.Confined;
                 return;

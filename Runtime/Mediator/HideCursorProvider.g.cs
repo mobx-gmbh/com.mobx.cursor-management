@@ -2,7 +2,7 @@ using MobX.Mediator.Provider;
 
 namespace MobX.CursorManagement
 {
-    public class HideCursorProvider : KeyCollectionAsset<IHideCursor>
+    public class HideCursorLocks : LockAsset<IHideCursor>
     {
     }
 }
