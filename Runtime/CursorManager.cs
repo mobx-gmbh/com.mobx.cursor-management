@@ -2,6 +2,7 @@ using MobX.Inspector;
 using MobX.Mediator.Callbacks;
 using MobX.Mediator.Singleton;
 using MobX.Utilities;
+using MobX.Utilities.Collections;
 using Sirenix.OdinInspector;
 using System;
 using System.Collections;
@@ -10,9 +11,6 @@ using UnityEngine;
 
 namespace MobX.CursorManagement
 {
-    /// <summary>
-    ///     Base class for managing cursor state / textures / animations.
-    /// </summary>
     public class CursorManager : SingletonAsset<CursorManager>
     {
         #region Inspector
@@ -25,7 +23,15 @@ namespace MobX.CursorManagement
         [SerializeField] [Required] private HideCursorLocks cursorHide;
         [SerializeField] [Required] private ConfineCursorLocks cursorConfine;
         [SerializeField] [Required] private LockCursorLocks cursorLock;
-        [SerializeField] [Required] private CursorStack cursorStack;
+
+        #endregion
+
+
+        #region Fields
+
+        [ReadOnly]
+        [ShowInInspector]
+        private readonly ListStack<CursorFile> _cursorStack = new();
 
         #endregion
 
@@ -33,7 +39,7 @@ namespace MobX.CursorManagement
         #region Properties
 
         public CursorSet ActiveCursorSet { get; private set; }
-        public CursorFile ActiveCursor => cursorStack.Peek();
+        public CursorFile ActiveCursor => _cursorStack.Peek();
 
         public static CursorLockMode LockState
         {
@@ -116,7 +122,7 @@ namespace MobX.CursorManagement
             cursorConfine.LastRemoved -= UpdateCursorState;
             cursorLock.FirstAdded -= UpdateCursorState;
             cursorLock.LastRemoved -= UpdateCursorState;
-            cursorStack.Clear();
+            _cursorStack.Clear();
         }
 
         #endregion
@@ -150,11 +156,11 @@ namespace MobX.CursorManagement
 
         public void SwitchActiveCursorSet(CursorSet cursorSet)
         {
-            for (var i = 0; i < cursorStack.Count; i++)
+            for (var i = 0; i < _cursorStack.Count; i++)
             {
-                var cursorFile = cursorStack[i];
+                var cursorFile = _cursorStack[i];
                 var cursorType = ActiveCursorSet.GetType(cursorFile);
-                cursorStack[i] = cursorSet.GetCursor(cursorType);
+                _cursorStack[i] = cursorSet.GetCursor(cursorType);
             }
 
             ActiveCursorSet = cursorSet;
@@ -189,14 +195,14 @@ namespace MobX.CursorManagement
                 return;
             }
 
-            cursorStack.PushUnique(file);
+            _cursorStack.PushUnique(file);
             UpdateCursorFileInternal();
         }
 
         internal void RemoveCursorOverride(CursorFile file)
         {
             var isActiveCursor = file == ActiveCursor;
-            cursorStack.Remove(file);
+            _cursorStack.Remove(file);
             if (isActiveCursor)
             {
                 UpdateCursorFileInternal();
